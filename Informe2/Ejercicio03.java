@@ -1,3 +1,4 @@
+
 package Informe2;
 
 import java.util.Scanner;
@@ -6,24 +7,17 @@ public class Ejercicio03 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("Ingrese su edad: ");
-        int edad = sc.nextInt();
+        System.out.print("Nombre: ");
+        String nombre = sc.nextLine();
 
-        if (edad >= 18) {
-            System.out.println("Es mayor de edad");
-        } else {
-            System.out.println("Es menor de edad");
-        }
+        System.out.print("Edad: ");
+        int edad = Integer.parseInt(sc.nextLine().trim());
 
-        sc.nextLine();
+        System.out.print("Capital (en pesos): ");
+        double capital = Double.parseDouble(sc.nextLine().trim().replace(',', '.'));
 
-        System.out.print("Ingrese la capital de Colombia: ");
-        String capital = sc.nextLine();
-
-        if (capital.equalsIgnoreCase("Bogota")) {
-            System.out.println("Respuesta correcta");
-        } else {
-            System.out.println("Respuesta incorrecta");
+        if (edad >= 18 && capital > 1000000) {
+            System.out.println("¡Felicitaciones " + nombre + "! Eres mayor de edad y tienes un buen capital, ¡a invertirlo con inteligencia!");
         }
 
         sc.close();
