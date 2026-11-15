@@ -7,27 +7,15 @@ public class Ejercicio12 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("Ingrese el valor de la compra: ");
-        double compra = sc.nextDouble();
+        System.out.print("Ingresa el valor de n: ");
+        int n = sc.nextInt();
 
-        double descuento = 0;
-
-        if (compra < 0) {
-            System.out.println("Valor de compra no valido");
-        } else {
-            if (compra >= 200000) {
-                descuento = compra * 0.20;
-            } else if (compra >= 100000) {
-                descuento = compra * 0.10;
-            } else if (compra >= 50000) {
-                descuento = compra * 0.05;
+        System.out.println("Números pares entre 0 y " + n + " (10 por renglón):");
+        for (int inicio = 0; inicio <= n; inicio += 20) {
+            for (int i = inicio; i <= n && i < inicio + 20; i += 2) {
+                System.out.print(i + " ");
             }
-
-            double total = compra - descuento;
-
-            System.out.println("Valor de la compra: " + compra);
-            System.out.println("Descuento aplicado: " + descuento);
-            System.out.println("Total a pagar: " + total);
+            System.out.println();
         }
 
         sc.close();
