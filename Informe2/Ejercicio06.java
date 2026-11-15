@@ -7,25 +7,21 @@ public class Ejercicio06 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("Ingrese la velocidad del vehiculo: ");
+        System.out.print("Ingresa tu velocidad (km/h): ");
         int velocidad = sc.nextInt();
 
-        System.out.print("Ingrese el limite de velocidad: ");
-        int limite = sc.nextInt();
-
-        if (velocidad <= limite) {
-            System.out.println("Velocidad permitida");
+        if (velocidad < 0) {
+            System.out.println("Velocidad no válida.");
+        } else if (velocidad <= 30) {
+            System.out.println("Zonas Escolares (límite 30 km/h): no estás infringiendo el límite.");
+        } else if (velocidad <= 60) {
+            System.out.println("Vías Urbanas (límite 60 km/h): no estás infringiendo el límite.");
+        } else if (velocidad <= 80) {
+            System.out.println("Vías Rurales (límite 80 km/h): no estás infringiendo el límite.");
+        } else if (velocidad <= 100) {
+            System.out.println("Rutas Nacionales (límite 100 km/h): no estás infringiendo el límite.");
         } else {
-            int exceso = velocidad - limite;
-
-            System.out.println("Ha superado el limite de velocidad");
-            System.out.println("Exceso de velocidad: " + exceso + " km/h");
-
-            if (exceso <= 20) {
-                System.out.println("Infraccion leve");
-            } else {
-                System.out.println("Infraccion grave");
-            }
+            System.out.println("Estás infringiendo los límites de velocidad (más de 100 km/h).");
         }
 
         sc.close();
