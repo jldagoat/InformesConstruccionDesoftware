@@ -1,40 +1,66 @@
 
 package Informe2;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Ejercicio09 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("Ingrese el primer numero: ");
-        double numero1 = sc.nextDouble();
+        System.out.println("=== 1. ArithmeticException ===");
+        try {
+            System.out.print("Numerador: ");
+            int a = Integer.parseInt(sc.nextLine().trim());
+            System.out.print("Denominador: ");
+            int b = Integer.parseInt(sc.nextLine().trim());
+            System.out.println("Resultado: " + (a / b));
+        } catch (ArithmeticException e) {
+            System.out.println("Error: No se puede dividir entre cero.");
+        } catch (NumberFormatException e) {
+            System.out.println("Error: Debe ingresar números enteros válidos.");
+        }
 
-        System.out.print("Ingrese el segundo numero: ");
-        double numero2 = sc.nextDouble();
+        System.out.println("\n=== 2. NumberFormatException ===");
+        try {
+            System.out.print("Ingrese un número entero: ");
+            int numero = Integer.parseInt(sc.nextLine().trim());
+            System.out.println("Número ingresado: " + numero);
+        } catch (NumberFormatException e) {
+            System.out.println("Error: Debe ingresar un número válido.");
+        }
 
-        System.out.println("1. Sumar");
-        System.out.println("2. Restar");
-        System.out.println("3. Multiplicar");
-        System.out.println("4. Dividir");
+        System.out.println("\n=== 3. ArrayIndexOutOfBoundsException ===");
+        int[] vector = {10, 20, 30};
+        try {
+            System.out.println("Posición 3: " + vector[3]);
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Error: La posición no existe en el vector (tamaño " + vector.length + ").");
+        }
 
-        System.out.print("Seleccione una opcion: ");
-        int opcion = sc.nextInt();
+        System.out.println("\n=== 4. NullPointerException ===");
+        String texto = null;
+        try {
+            System.out.println("Longitud: " + texto.length());
+        } catch (NullPointerException e) {
+            System.out.println("Error: La variable texto vale null.");
+        }
 
-        if (opcion == 1) {
-            System.out.println("Resultado: " + (numero1 + numero2));
-        } else if (opcion == 2) {
-            System.out.println("Resultado: " + (numero1 - numero2));
-        } else if (opcion == 3) {
-            System.out.println("Resultado: " + (numero1 * numero2));
-        } else if (opcion == 4) {
-            if (numero2 != 0) {
-                System.out.println("Resultado: " + (numero1 / numero2));
-            } else {
-                System.out.println("No se puede dividir entre cero");
-            }
-        } else {
-            System.out.println("Opcion no valida");
+        System.out.println("\n=== 5. StringIndexOutOfBoundsException ===");
+        String palabra = "Diego";
+        try {
+            System.out.println(palabra.charAt(5));
+        } catch (StringIndexOutOfBoundsException e) {
+            System.out.println("Error: La posición 5 no existe en \"" + palabra + "\".");
+        }
+
+        System.out.println("\n=== 6. InputMismatchException ===");
+        try {
+            System.out.print("Ingrese su edad (número entero): ");
+            int edad = sc.nextInt();
+            System.out.println("Edad: " + edad);
+        } catch (InputMismatchException e) {
+            System.out.println("Error: Escribió un dato que no es un entero.");
         }
 
         sc.close();
