@@ -7,15 +7,19 @@ public class Ejercicio13 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("Ingrese un año: ");
-        int anio = sc.nextInt();
+        System.out.print("Ingresa el valor de n: ");
+        int n = sc.nextInt();
 
-        if (anio <= 0) {
-            System.out.println("Año no valido");
-        } else if ((anio % 4 == 0 && anio % 100 != 0) || anio % 400 == 0) {
-            System.out.println("El año es bisiesto");
-        } else {
-            System.out.println("El año no es bisiesto");
+        System.out.println("Números impares entre 0 y " + n + " (12 por renglón):");
+        int i = 1;
+        while (i <= n) {
+            int porRenglon = 0;
+            while (porRenglon < 12 && i <= n) {
+                System.out.print(i + " ");
+                i += 2;
+                porRenglon++;
+            }
+            System.out.println();
         }
 
         sc.close();
