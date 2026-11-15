@@ -3,25 +3,33 @@ package Informe2;
 
 import java.util.Scanner;
 
-public class Ejercicio11 {
+public class Ejercicio10 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("Ingrese el primer numero: ");
-        int numero1 = sc.nextInt();
+        try {
+            System.out.print("Entero (Integer.parseInt): ");
+            int entero = Integer.parseInt(sc.nextLine().trim());
+            System.out.println("-> int: " + entero + " | entero + 1 = " + (entero + 1));
 
-        System.out.print("Ingrese el segundo numero: ");
-        int numero2 = sc.nextInt();
+            System.out.print("Decimal (Double.parseDouble): ");
+            double decimal = Double.parseDouble(sc.nextLine().trim().replace(',', '.'));
+            System.out.println("-> double: " + decimal + " | decimal * 2 = " + (decimal * 2));
 
-        System.out.print("Ingrese el tercer numero: ");
-        int numero3 = sc.nextInt();
+            System.out.print("Nota (Float.parseFloat): ");
+            float nota = Float.parseFloat(sc.nextLine().trim().replace(',', '.'));
+            System.out.println("-> float: " + nota);
 
-        if (numero1 >= numero2 && numero1 >= numero3) {
-            System.out.println("El numero mayor es: " + numero1);
-        } else if (numero2 >= numero1 && numero2 >= numero3) {
-            System.out.println("El numero mayor es: " + numero2);
-        } else {
-            System.out.println("El numero mayor es: " + numero3);
+            System.out.print("Número grande (Long.parseLong): ");
+            long grande = Long.parseLong(sc.nextLine().trim());
+            System.out.println("-> long: " + grande);
+
+            System.out.print("Verdadero o falso (Boolean.parseBoolean): ");
+            boolean activo = Boolean.parseBoolean(sc.nextLine().trim());
+            System.out.println("-> boolean: " + activo);
+
+        } catch (NumberFormatException e) {
+            System.out.println("Error: uno de los valores no se pudo convertir a número.");
         }
 
         sc.close();
