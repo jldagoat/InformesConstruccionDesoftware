@@ -1,3 +1,4 @@
+package Informe2;
 
 import java.util.Scanner;
 

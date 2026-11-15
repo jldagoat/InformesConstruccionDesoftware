@@ -1,3 +1,5 @@
+package Informe1;
+
 
 public class Ejercicio31 {
     public static void main(String[] args) {

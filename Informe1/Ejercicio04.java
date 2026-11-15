@@ -1,4 +1,6 @@
-﻿
+package Informe1;
+
+
 public class Ejercicio04 {
     public static void main(String[] args) {
         int numero1 = 8;

@@ -1,4 +1,6 @@
-﻿
+package Informe1;
+
+
 public class Ejercicio05 {
     public static void main(String[] args) {
         int numero1 = 20;

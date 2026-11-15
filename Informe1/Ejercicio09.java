@@ -1,4 +1,6 @@
-﻿
+package Informe1;
+
+
 public class Ejercicio09 {
     public static void main(String[] args) {
         String nombre = "Jorge";
