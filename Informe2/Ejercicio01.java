@@ -1,20 +1,35 @@
+
 package Informe2;
 
 import java.util.Scanner;
 
 public class Ejercicio01 {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Ingrese su nombre: ");
-        String nombre = sc.nextLine();
+        System.out.print("Nombre: ");
+        String nombre = scanner.nextLine();
 
-        System.out.print("Ingrese su edad: ");
-        int edad = sc.nextInt();
+        System.out.print("Edad: ");
+        int edad = scanner.nextInt();
+        scanner.nextLine();
 
-        System.out.println("Hola " + nombre);
-        System.out.println("Tu edad es: " + edad);
+        System.out.println(nombre + " tiene " + edad + " años.");
 
-        sc.close();
+        System.out.print("Ingresa el primer número: ");
+        int a = scanner.nextInt();
+        System.out.print("Ingresa el segundo número: ");
+        int b = scanner.nextInt();
+        System.out.println("Suma: " + (a + b));
+
+        System.out.print("Ingresa un número entero: ");
+        if (scanner.hasNextInt()) {
+            int numero = scanner.nextInt();
+            System.out.println("Ingresaste el número " + numero);
+        } else {
+            System.out.println("¡Debes ingresar un número!");
+        }
+
+        scanner.close();
     }
 }
