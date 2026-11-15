@@ -1,3 +1,4 @@
+
 package Informe2;
 
 import java.util.Scanner;
@@ -6,23 +7,39 @@ public class Ejercicio07 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("Ingrese la primera nota: ");
-        double nota1 = sc.nextDouble();
+        System.out.println("===== MENÚ - CAFETERÍA =====");
+        System.out.println("1. Café ............ $3000");
+        System.out.println("2. Empanada ........ $2500");
+        System.out.println("3. Jugo natural .... $4500");
+        System.out.println("4. Sándwich ........ $7000");
+        System.out.println("5. Postre del día .. $5000");
+        System.out.print("Escoge una opción (1-5): ");
 
-        System.out.print("Ingrese la segunda nota: ");
-        double nota2 = sc.nextDouble();
+        int opcion;
+        try {
+            opcion = Integer.parseInt(sc.nextLine().trim());
+        } catch (NumberFormatException e) {
+            opcion = -1;
+        }
 
-        System.out.print("Ingrese la tercera nota: ");
-        double nota3 = sc.nextDouble();
-
-        double definitiva = (nota1 + nota2 + nota3) / 3;
-
-        System.out.println("Nota definitiva: " + definitiva);
-
-        if (definitiva >= 3.0) {
-            System.out.println("El estudiante aprobo");
-        } else {
-            System.out.println("El estudiante reprobo");
+        switch (opcion) {
+            case 1:
+                System.out.println("Café: $3000");
+                break;
+            case 2:
+                System.out.println("Empanada: $2500");
+                break;
+            case 3:
+                System.out.println("Jugo natural: $4500");
+                break;
+            case 4:
+                System.out.println("Sándwich: $7000");
+                break;
+            case 5:
+                System.out.println("Postre del día: $5000");
+                break;
+            default:
+                System.out.println("Opción no válida.");
         }
 
         sc.close();
