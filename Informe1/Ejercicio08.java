@@ -1,5 +1,5 @@
-
-public class Ejercicio8 {
+﻿
+public class Ejercicio08 {
     public static void main(String[] args) {
         int numero1 = 15;
         int numero2 = 10;
@@ -17,3 +17,4 @@ public class Ejercicio8 {
         System.out.println("Division: " + division);
     }
 }
+

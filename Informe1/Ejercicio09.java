@@ -1,5 +1,5 @@
-
-public class Ejercicio9 {
+﻿
+public class Ejercicio09 {
     public static void main(String[] args) {
         String nombre = "Jorge";
         String carrera = "Ingenieria de Software";
@@ -16,3 +16,4 @@ public class Ejercicio9 {
         System.out.println("Promedio: " + promedio);
     }
 }
+

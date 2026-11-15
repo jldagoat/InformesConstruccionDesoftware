@@ -1,5 +1,5 @@
-
-public class Ejercicio6 {
+﻿
+public class Ejercicio06 {
     public static void main(String[] args) {
         String nombre = "Jorge";
         int edad = 18;
@@ -12,3 +12,4 @@ public class Ejercicio6 {
         System.out.println("Es estudiante: " + estudiante);
     }
 }
+

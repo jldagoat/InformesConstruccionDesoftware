@@ -1,5 +1,5 @@
-
-public class Ejercicio3 {
+﻿
+public class Ejercicio03 {
     public static void main(String[] args) {
         byte edad = 17;
         short cantidad = 1500;
@@ -20,3 +20,4 @@ public class Ejercicio3 {
         System.out.println("Estudiante: " + estudiante);
     }
 }
+

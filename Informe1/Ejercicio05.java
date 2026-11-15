@@ -1,5 +1,5 @@
-
-public class Ejercicio5 {
+﻿
+public class Ejercicio05 {
     public static void main(String[] args) {
         int numero1 = 20;
         int numero2 = 5;
@@ -11,3 +11,4 @@ public class Ejercicio5 {
         System.out.println("Modulo: " + (numero1 % numero2));
     }
 }
+
