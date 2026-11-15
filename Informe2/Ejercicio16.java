@@ -7,44 +7,36 @@ public class Ejercicio16 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        double saldo = 500000;
+        String nombres[] = new String[5];
+        char caracteres[] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L',
+                             'M', 'N', '\u00D1', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
+        int numeros[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15,
+                         16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27};
 
-        System.out.println("Bienvenido al cajero automatico");
-        System.out.println("1. Consultar saldo");
-        System.out.println("2. Retirar dinero");
-        System.out.println("3. Depositar dinero");
+        int x = 0;
+        while (x < 5) {
+            System.out.print("Nombre " + (x + 1) + ": ");
+            nombres[x] = sc.nextLine().trim().toUpperCase();
+            x++;
+        }
 
-        System.out.print("Seleccione una opcion: ");
-        int opcion = sc.nextInt();
+        x = 0;
+        String nombreAuxiliar = "";
+        System.out.println("\nResultados:");
 
-        if (opcion == 1) {
-            System.out.println("Su saldo es: " + saldo);
-        } else if (opcion == 2) {
-            System.out.print("Ingrese el valor a retirar: ");
-            double retiro = sc.nextDouble();
-
-            if (retiro <= 0) {
-                System.out.println("Valor no valido");
-            } else if (retiro <= saldo) {
-                saldo = saldo - retiro;
-                System.out.println("Retiro exitoso");
-                System.out.println("Saldo actual: " + saldo);
-            } else {
-                System.out.println("Saldo insuficiente");
+        while (x < 5) {
+            for (int j = 0; j < nombres[x].length(); j++) {
+                for (int k = 0; k < caracteres.length; k++) {
+                    if (nombres[x].charAt(j) == caracteres[k]) {
+                        nombreAuxiliar = nombreAuxiliar + numeros[k];
+                    }
+                }
             }
-        } else if (opcion == 3) {
-            System.out.print("Ingrese el valor a depositar: ");
-            double deposito = sc.nextDouble();
 
-            if (deposito > 0) {
-                saldo = saldo + deposito;
-                System.out.println("Deposito exitoso");
-                System.out.println("Saldo actual: " + saldo);
-            } else {
-                System.out.println("Valor no valido");
-            }
-        } else {
-            System.out.println("Opcion no valida");
+            System.out.println(nombres[x] + " - " + nombreAuxiliar);
+            nombres[x] = nombreAuxiliar;
+            nombreAuxiliar = "";
+            x++;
         }
 
         sc.close();
